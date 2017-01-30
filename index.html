@@ -5,7 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="CSS/prelaunch.css" />
+    <style type="text/css">
+    body {
+    margin:0; 
+    padding:0
+    }
+
+    .wrapper {
+        position: relative; 
+    }
+
+    .text {
+        position: absolute;  
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        font-family:'Poiret One', cursive;
+        font-size: 5vw;
+    }
+
+canvas {
+    background-color: #850405; 
+    width: 100vw;
+    height:100vh;
+}
+
+    </style>
 </head>
 
 <body>
@@ -14,6 +42,14 @@
     <canvas id="canvas">
     </canvas>
 </div>
-<script type="text/javascript" src="js/prelaunch.js"></script>
+<script type="text/javascript">
+    var c=document.getElementById("canvas");
+    var ctx=c.getContext('2d');
+    var my_gradient=ctx.createLinearGradient(0,0,0,140);
+    my_gradient.addColorStop(0,"#850405");
+    my_gradient.addColorStop(1,"#59532D");
+    ctx.fillStyle=my_gradient;
+    ctx.fillRect(0,0,2800,1200);
+</script>
 </body>
 </html>
